@@ -9,7 +9,20 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
+	$("anagram").click(function(){
+		preventDefault();
+		var name = $(this).text();
+		anagrammedName(name);
+		console.log("click");
+	})
 	console.log("Javascript connected!");
+}
+
+$("#anagram").click(switchName);
+
+function switchName(event) {
+	preventDefault();
+	return anagrammedName($(this).text());
 }
 
 function anagrammedName(name) {
